@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
-const prisma = new PrismaClient()
-async function seed() {
+const seed = async () => {
   await prisma.post.createMany({
     data: [
-      { title: 't-1', content: 'c-1' },
-      { title: 't-2', content: 'c-2' },
+      { title: 'title-1', content: 'dummy1' },
+      { title: 'title-2', content: 'dummy2' },
     ],
   });
-}
+};
 seed();
